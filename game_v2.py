@@ -15,19 +15,19 @@ def random_predict(number: int = 1) -> int:
         int: Число попыток
     """
     count = 0
-    mi = 0
-    ma = 101
+    min_number = 0
+    max_number = 101
     predict_number = 50
     while True:
         count += 1
         if number == predict_number:
             break
         elif number < predict_number:
-            ma = predict_number
-            predict_number = (predict_number + mi) // 2
+            max_number = predict_number
+            predict_number = (predict_number + min_number) // 2
         elif number > predict_number:
-            mi = predict_number
-            predict_number = (predict_number + ma) // 2
+            min_number = predict_number
+            predict_number = (predict_number + max_number) // 2
     return count
 
 
